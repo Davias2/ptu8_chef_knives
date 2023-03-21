@@ -6,11 +6,11 @@ from django.utils import timezone
 
 
 class Product(models.Model):
-    name = models.CharField(max_length=255)
+    name = models.CharField(max_length=50)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     stock = models.IntegerField()
     image_url = models.CharField(max_length=350)
-    blade_length = models.IntegerField(default=0)
+    description = models.TextField(max_length=1150, default='', blank=True, null=True)
 
     def __str__(self) :
         return self.name
@@ -55,7 +55,6 @@ class Cart(models.Model):
 
 class Category(models.Model):
     name = models.CharField(max_length=255, unique=True)
-    description = models.TextField(blank=True)
 
     class Meta:
         verbose_name_plural = 'categories'

@@ -1,16 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
+<h1>Welcome to our Knife Store</h1>
   <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
       <div class="carousel-item active">
-        <img src="https://cdn.shopify.com/s/files/1/1373/2665/collections/Wa_Gyuto_1_1944x.jpg?v=1563388975" class="d-block w-100" alt="...">
+        <img src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/2020-01/Japanese-knives.jpg?itok=u1kN53XJ" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1604367165867-09c74716e25e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+        <img src="https://cdn.shopify.com/s/files/1/0418/6151/3377/files/CEF906E1-19AF-49FC-B31D-BD2BA6168819-771-0000003E05088D5E_1500x.jpg?v=1671012513" class="d-block w-100" alt="...">
       </div>
       <div class="carousel-item">
-        <img src="https://images.unsplash.com/photo-1623781182843-c1c9ac3afdf3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" class="d-block w-100" alt="...">
+        <img src="https://cdn.shopify.com/s/files/1/1373/2665/collections/Mizuno_Tanrenjo_Sukenari_Custom_Limited_Edition_Knives_1270x370_f7756d6d-4b9e-4d99-958f-b65ba65af61f_1944x.jpg?v=1667274590" class="d-block w-100" alt="...">
       </div>
     </div>
     <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
@@ -23,15 +24,26 @@
     </button>
   </div>
 
-  <h1>Welcome to our Knife Store</h1>
-  <p>We offer a wide selection of high-quality knives for all your needs.</p>
+  <p>Once upon a time, before Western Culture and foods were brought to Japan (Before the year 1900), Single Bevel Edge of Japanese Traditional style knives were very common knives for daily cooking in Japan. 
+    The Single Bevel of Japanese Traditional style knives make great cutting performance. 
+    For examples, the “Yanagiba” is well designed for slicing and preparing the Sashimi (Raw Fish) without losing the beautiful shape and freshness. The “Usuba” is suitable design for cutting, peeling, also thin & precise cutting for vegetables. 
+    They are necessary tools and knives for the Japanese foods (their main food materials were fishes and vegetables).
+    Nowadays, Sushi and many other Japanese foods are becoming very popular and commonplace throughout the world. You may have even seen the impressive skills of a Sushi Chef firsthand, as he uses his Yanagiba knife to delicately slice raw fish for a beautiful Sashimi dish.
+    Japanese traditional style knives have long history, and there a number of Japanese traditional-style knives that are most likely not commonplace in your country.
+    The islands that make up Japan are geographically isolated from other countries and, as a result, the Japanese have always made the most of the fresh seasonal food resources offered by their land, lakes, rivers and seas. 
+    The diversity of these foods, in addition to cultural influences, led to the development of a number of different knives that were each intended for a very specific purpose. 
+    The single bevel edged Yanagiba, Deba and Usuba are unique to Japan, and they were developed to cleanly cut ingredients, because this better preserves the fresh flavor and texture of the food.
+    Japanese Traditional Style knives are usually fitted with a traditional Japanese wooden handle and have a blade with a tapered tang that fits inside a hole that is burned in to the wooden handle. 
+    Japanese Traditional Style Knives are typically lighter in weight and are much easier to replace; this is useful if you damage a handle.
+    The blades of Japanese knives are typically tempered to a higher Rockwell hardness than most kitchen knives manufactured in the West. This enables Japanese knives to have superior edge sharpness and edge retention.
+    There are many numbers of professionals and serious home chefs (especially Japanese food chefs) who demand outstanding cutting performance to make special foods that require the freshness, beautiful shape & looks and delicate works. 
+    Also many people love the traditional taste and traditional forged knives which can feel the soul of craftsmanship and something special to own.</p>
   
   <h2>Featured Products</h2>
   {% for product in products %}
     <div class="product">
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
-      <p>Price: {{ product.price }}</p>
       {% comment %} <a href="{% url 'product_detail' product.pk %}">Learn more</a> {% endcomment %}
     </div>
   {% empty %}
