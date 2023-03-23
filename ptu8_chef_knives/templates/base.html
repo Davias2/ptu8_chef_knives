@@ -16,9 +16,13 @@
         <li><a href="{% url 'index' %}">knives</a></li>
         {% if request.user.is_authenticated %}
             <span class="user-info">{{ request.user }}</span>
+            {% if request.user.is_superuser or request.user.is_staff %}
+              <li><a href="{% url 'admin:index' %}">admin</a></li>
+            {% endif %}
             <li><a href="{% url 'logout' %}">log out</a></li>
         {% else %}
-            <li><a href="{% url 'login' %}">log in</a></li>
+            <span class="user-info"></span>
+            <li><a href="{% url 'login' %}{% if request.path != '/accounts/logout/' %}?next={{ request.path }}{% endif %}">log in</a></li>
         {% endif %}
       <ul>
       <div class="container">{% block content %}{% endblock %}</div>
