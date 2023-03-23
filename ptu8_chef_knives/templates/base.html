@@ -14,11 +14,11 @@
         <a class="navbar-brand" href="#">Chef knives</a>
         <li><a href="{% url 'home' %}">Home</a></li>
         <li><a href="{% url 'index' %}">knives</a></li>
-        <span>{{ request.user }}</span>
         {% if request.user.is_authenticated %}
-        <li><a href="{% url 'login' %}"></a>log in</a></li>
+            <span class="user-info">{{ request.user }}</span>
+            <li><a href="{% url 'logout' %}">log out</a></li>
         {% else %}
-        <li><a href="{% url 'logout' %}"></a>log out</a></li>
+            <li><a href="{% url 'login' %}">log in</a></li>
         {% endif %}
       <ul>
       <div class="container">{% block content %}{% endblock %}</div>
