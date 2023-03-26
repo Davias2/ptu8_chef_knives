@@ -1,29 +1,35 @@
 {% extends 'base.html' %}
-
+{% block style %}
+{% load static %}
+{% endblock style %}
 {% block content %}
 <h1>Welcome To Our Knife Store</h1>
-  <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="https://www.finedininglovers.com/sites/g/files/xknfdk626/files/styles/open_graph_image/public/2020-01/Japanese-knives.jpg?itok=u1kN53XJ" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://cdn.shopify.com/s/files/1/0418/6151/3377/files/CEF906E1-19AF-49FC-B31D-BD2BA6168819-771-0000003E05088D5E_1500x.jpg?v=1671012513" class="d-block w-100" alt="...">
-      </div>
-      <div class="carousel-item">
-        <img src="https://cdn.shopify.com/s/files/1/1373/2665/collections/Mizuno_Tanrenjo_Sukenari_Custom_Limited_Edition_Knives_1270x370_f7756d6d-4b9e-4d99-958f-b65ba65af61f_1944x.jpg?v=1667274590" class="d-block w-100" alt="...">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Previous</span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="visually-hidden">Next</span>
-    </button>
+<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+    <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
-
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="{% static 'chef_knives/img/knife2.jpg' %}" height="650px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'chef_knives/img/knife1.jpg' %}" height="650px" class="d-block w-100" alt="...">
+    </div>
+    <div class="carousel-item">
+      <img src="{% static 'chef_knives/img/knife3.1.jpg' %}" height="650px" class="d-block w-100" alt="...">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
   <p>Once upon a time, before Western Culture and foods were brought to Japan (Before the year 1900), Single Bevel Edge of Japanese Traditional style knives were very common knives for daily cooking in Japan. 
     The Single Bevel of Japanese Traditional style knives make great cutting performance. 
     For examples, the “Yanagiba” is well designed for slicing and preparing the Sashimi (Raw Fish) without losing the beautiful shape and freshness. The “Usuba” is suitable design for cutting, peeling, also thin & precise cutting for vegetables. 

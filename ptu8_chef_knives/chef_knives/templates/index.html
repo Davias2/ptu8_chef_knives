@@ -1,4 +1,8 @@
 {% extends 'base.html' %}
+{% load static i18n %}
+{% block head %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+{% endblock %}
 
 {% block content %}
     <h1>Blades</h1>
@@ -10,7 +14,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ product.name }}</h5>
                   <p class="card-text">€{{ product.price }}</p>
-                  <a href="#" class="btn btn-primary">add to cart</a>
+                  <a href="{% url 'product_detail' product.pk %}" class="btn btn-primary">view</a>
                 </div>
               </div>
         </div>

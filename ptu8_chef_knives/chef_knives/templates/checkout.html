@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Checkout</h1>
+  <p>Thank you for your order!</p>
+  <h2>Order details</h2>
+  <table>
+    <tr>
+      <th>Order ID</th>
+      <td>{{ order.id }}</td>
+    </tr>
+    <tr>
+      <th>Customer name</th>
+      <td>{{ order.customer.user.username }}</td>
+    </tr>
+    <tr>
+      <th>Date ordered</th>
+      <td>{{ order.date_ordered }}</td>
+    </tr>
+    <tr>
+      <th>Status</th>
+      <td>{{ order.status }}</td>
+    </tr>
+    <tr>
+      <th>Total</th>
+      <td>{{ order.get_total }}</td>
+    </tr>
+  </table>
+{% endblock %}

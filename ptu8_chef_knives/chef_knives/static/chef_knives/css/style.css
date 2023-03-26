@@ -1,0 +1,122 @@
+body {
+    background-color: #ffffff;
+    color: #000000;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 62px calc(100vh - 112px) 50px;
+    grid-template-areas: 
+        "header"
+        "main"
+        "footer"
+    ;
+    font-family: 'Roboto';
+}
+a {
+    color: rgb(55, 104, 57);
+    text-decoration: none;
+    background-color: rgba(80, 112, 88, 0.349);
+    border-bottom: 1px solid rgb(54, 114, 49);
+}
+header {
+    grid-area: header;
+    background-color: rgb(255, 255, 255);
+    border-bottom: 2px solid rgba(2, 41, 2, 0.267);
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+main {
+    grid-area: main;
+    overflow: auto;
+    width: 100%;
+}
+.container {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+footer {
+    grid-area: footer;
+    width: 100%;
+    height: 50px;
+    background-color: rgba(172, 179, 171, 0.479);
+    border-top: 2px solid rgba(54, 77, 19, 0.342);
+    position: fixed; 
+    bottom: 0; 
+    z-index: 100;
+    margin-top: auto;
+  }
+header .container, main .container, footer .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+main .container, footer.container {
+    padding: 0 16px;
+}
+header ul {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding-inline-start: 0;
+    margin: 8px 0;
+    gap: 16px;
+    overflow-x: auto;
+}
+header ul li {
+    display: inline-block;
+}
+header .user-info {
+    flex-grow: 1;
+    text-align: right;
+}
+header .user-info a {
+    background: none;
+    border: none;
+    display: inline-block;
+}
+header ul li a {
+    padding: 8px 16px;
+    display: block;
+    border-radius: 8px;
+}
+ .carousel-item img { 
+  object-fit: cover; 
+}
+.card {
+  border: 1px solid #4d8d41b6;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px rgba(59, 73, 117, 0.76);
+  margin-bottom: 20px;
+}
+
+.card-img-top {
+  height: 240px;
+  object-fit: cover;
+}
+
+.card-title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+}
+
+.btn-primary {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+  border-color: #0062cc;
+}

@@ -1,14 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .models import Product, Customer, Order, Cart, Category
+from .models import Product, Customer, Order, Cart, Category, OrderItem
+from django.db.models import F, Sum
 
 
 def home(request):
     products = Product.objects.all()
     categories = Category.objects.all()
+    
     context = {
         'products': products,
-        'categories': categories
+        'categories': categories,
     }
     return render(request, 'home.html', context)
 
@@ -26,13 +28,23 @@ def product_detail(request, pk):
     }
     return render(request, 'product_detail.html', context)
 
+# def categories(request):
+#     categories = Category.objects.all()
+#     context = {
+#         'categories': categories
+#     }
+#     return render(request, 'categories.html', context)
+
 def cart(request):
     if request.user.is_authenticated:
         cart_items = Cart.objects.filter(user=request.user)
+        total_price = cart_items.annotate(price=F('product__price') * F('quantity')).aggregate(Sum('price'))['price__sum'] or 0
     else:
         cart_items = []
+        total_price = 0
     context = {
-        'cart_items': cart_items
+        'cart_items': cart_items,
+        'total_price': total_price
     }
     return render(request, 'cart.html', context)
 
@@ -49,7 +61,11 @@ def add_to_cart(request, pk):
 
 def remove_from_cart(request, pk):
     cart_item = Cart.objects.get(id=pk)
-    cart_item.delete()
+    if cart_item.quantity > 1:
+        cart_item.quantity -= 1
+        cart_item.save()
+    else:
+        cart_item.delete()
     return redirect('cart')
 
 def checkout(request):
