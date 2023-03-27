@@ -50,7 +50,7 @@
     <div class="product">
       <h3>{{ product.name }}</h3>
       <p>{{ product.description }}</p>
-      {% comment %} <a href="{% url 'product_detail' product.pk %}">Learn more</a> {% endcomment %}
+      <a href="{% url 'product_detail' product.pk %}">Learn more</a>
     </div>
   {% empty %}
     <p>There are no products currently available.</p>
